@@ -1,0 +1,107 @@
+/* Base de la unidad "Nodos y selectores", con colores propios */
+body {
+  font-family: Arial, sans-serif;
+  background: #f1f8f4;
+  color: #222;
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 24px;
+}
+h1 { color: #2b8a5e; margin-bottom: 4px; }
+.subtitulo { margin-top: 0; color: #555; }
+
+.btn {
+  background: #2b8a5e;
+  color: white;
+  border: none;
+  padding: 8px 16px;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 0.95rem;
+}
+.btn:hover { background: #237350; }
+
+#contenedor {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  gap: 16px;
+  margin-top: 16px;
+}
+
+/* Paneles y formulario */
+.panel {
+  background: white;
+  border-radius: 10px;
+  padding: 16px;
+  margin-bottom: 20px;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.08);
+}
+#formulario {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  align-items: flex-end;
+}
+.campo { display: flex; flex-direction: column; gap: 4px; flex: 1; min-width: 140px; }
+label { font-size: 0.85rem; font-weight: bold; color: #444; }
+input {
+  padding: 8px 10px;
+  border: 1px solid #c5d4cc;
+  border-radius: 6px;
+  font-size: 0.95rem;
+}
+input:focus { outline: 2px solid #2b8a5e; border-color: transparent; }
+input.error { border-color: #e03131; background: #fff5f5; }
+
+/* Feedback */
+.mensaje { margin: 12px 0 0; min-height: 22px; font-weight: bold; }
+.mensaje.exito { color: #2b8a5e; }
+.mensaje.error { color: #e03131; }
+.mensaje.aviso { color: #e67700; }
+
+.barra { display: flex; flex-wrap: wrap; gap: 12px; align-items: center; justify-content: space-between; }
+.barra input { flex: 1; min-width: 220px; }
+.resumen { margin: 0; font-size: 0.9rem; color: #555; }
+
+/* Tarjetas */
+.tarjeta {
+  background: #f8fbf9;
+  border: 1px solid #d5e5dc;
+  border-left: 5px solid #2b8a5e;
+  border-radius: 8px;
+  padding: 12px;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+.tarjeta h3 { margin: 0; font-size: 1.05rem; word-break: break-word; }
+.tarjeta p { margin: 0; color: #2b8a5e; font-weight: bold; font-size: 1.1rem; }
+.tarjeta .acciones { display: flex; gap: 8px; margin-top: 6px; }
+.tarjeta.comprado { opacity: 0.65; border-left-color: #adb5bd; }
+.tarjeta.comprado h3 { text-decoration: line-through; }
+.tarjeta.nuevo { animation: resaltar 1.5s ease; }
+
+.btn-comprado, .btn-eliminar {
+  flex: 1;
+  border: none;
+  border-radius: 6px;
+  padding: 6px 8px;
+  cursor: pointer;
+  color: white;
+  font-size: 0.85rem;
+}
+.btn-comprado { background: #3b5bdb; }
+.btn-comprado:hover { background: #2f49b0; }
+.btn-eliminar { background: #e03131; }
+.btn-eliminar:hover { background: #b82626; }
+
+.vacio { grid-column: 1 / -1; text-align: center; color: #777; padding: 24px 0; }
+
+@keyframes resaltar {
+  from { background: #ffec99; }
+  to { background: #f8fbf9; }
+}
+@keyframes salir {
+  to { opacity: 0; transform: scale(0.9); }
+}
+.tarjeta.saliendo { animation: salir 0.3s ease forwards; }

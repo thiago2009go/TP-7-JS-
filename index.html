@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Mi Simulador de Productos</title>
+  <link rel="stylesheet" href="css/style.css" />
+  <script src="js/main.js" defer></script>
+</head>
+<body>
+  <header>
+    <h1>Mi Simulador</h1>
+    <p class="subtitulo">Agregá productos, marcalos como comprados, filtralos o eliminalos.</p>
+  </header>
+
+  <main>
+    <section class="panel" aria-label="Agregar producto">
+      <form id="formulario" autocomplete="off">
+        <div class="campo">
+          <label for="input-nombre">Nombre</label>
+          <input type="text" id="input-nombre" placeholder="Ej: Auriculares" />
+        </div>
+        <div class="campo">
+          <label for="input-precio">Precio</label>
+          <input type="number" id="input-precio" placeholder="Ej: 15000" min="1" />
+        </div>
+        <button type="submit" id="btn-agregar" class="btn">+ Agregar</button>
+      </form>
+      <p id="mensaje" class="mensaje" role="status"></p>
+    </section>
+
+    <section class="panel" aria-label="Lista de productos">
+      <div class="barra">
+        <input type="search" id="input-buscar" placeholder="Buscar producto (filtra mientras escribís)..." />
+        <p id="resumen" class="resumen"></p>
+      </div>
+      <div id="contenedor"></div>
+    </section>
+  </main>
+</body>
+</html>
